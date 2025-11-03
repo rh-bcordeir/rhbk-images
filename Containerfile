@@ -13,7 +13,7 @@ ENV KC_HEALTH_ENABLED=true \
 RUN /opt/keycloak/bin/kc.sh build
 
 #################
-# Final image  ###
+# Final image  ##
 #################
 FROM registry.redhat.io/rhbk/keycloak-rhel9:26.4
 COPY --from=builder /opt/keycloak/ /opt/keycloak/
