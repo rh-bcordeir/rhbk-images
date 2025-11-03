@@ -1,4 +1,4 @@
-FROM registry.redhat.io/rhbk/keycloak-rhel9:26.2 as builder
+FROM registry.redhat.io/rhbk/keycloak-rhel9:26.4 as builder
 
 WORKDIR /opt/keycloak
 
@@ -15,7 +15,7 @@ RUN /opt/keycloak/bin/kc.sh build
 #################
 # Final image  ##
 #################
-FROM registry.redhat.io/rhbk/keycloak-rhel9:26.2
+FROM registry.redhat.io/rhbk/keycloak-rhel9:26.4
 COPY --from=builder /opt/keycloak/ /opt/keycloak/
 
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
