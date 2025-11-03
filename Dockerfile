@@ -6,8 +6,8 @@ WORKDIR /opt/keycloak
 # Adicione aqui outras build options: https://www.keycloak.org/server/all-config?f=build
 ENV KC_HEALTH_ENABLED=true \
     KC_METRICS_ENABLED=true \
-    KC_TRANSACTION_XA_ENABLED=false \
-    KC_DB=mssql
+    KC_TRANSACTION_XA_ENABLED=false 
+#   KC_DB=mssql
 
 # Re-augmentation
 RUN /opt/keycloak/bin/kc.sh build
